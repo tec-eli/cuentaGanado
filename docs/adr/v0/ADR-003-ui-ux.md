@@ -4,8 +4,7 @@
 Accepted
 
 ## Context
-The app is used in the field, often without looking at the screen.
-UI must be extremely simple, fast, and accessible.
+The app is used in the field, often without looking at the screen. UI must be extremely simple, fast, and accessible.
 
 ## Decision
 - Single screen, no navigation
@@ -18,4 +17,3 @@ UI must be extremely simple, fast, and accessible.
 - Users can operate the app by touch alone
 - No distractions or unnecessary UI elements
 - Accessibility and speed are maximized
-
