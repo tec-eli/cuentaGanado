@@ -8,6 +8,7 @@ This document is an index of the main user flows for the Cattle Counter applicat
 - [Correcting a Count (Decrement)](user-flow-correction.md)
 - [Resetting All Counters](user-flow-reset.md)
 - [Persistence and Continuity](user-flow-persistence.md)
+- [Platform & Version Specification](platform-spec.md)
 
 ---
 
