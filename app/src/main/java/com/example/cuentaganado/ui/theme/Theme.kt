@@ -1,54 +1,44 @@
 package com.example.cuentaganado.ui.theme
 
-import android.app.Activity
-import android.os.Build
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = EarthAccentGreen,
+    secondary = EarthAccentAmber,
+    tertiary = EarthNeutral,
+    background = EarthDark,
+    surface = EarthSurface,
+    onPrimary = EarthOnAccentDark,
+    onSecondary = EarthOnAccentDark,
+    onTertiary = EarthOnDark,
+    onBackground = EarthOnDark,
+    onSurface = EarthOnDark
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    primary = EarthDeepGreen,
+    secondary = EarthBurntOrange,
+    tertiary = EarthNeutral,
+    background = EarthLight,
+    surface = EarthLight,
+    onPrimary = EarthOnLight,
+    onSecondary = EarthOnLight,
+    onTertiary = EarthOnLight,
+    onBackground = EarthOnLight,
+    onSurface = EarthOnLight
 )
 
 @Composable
 fun CuentaGanadoTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    darkTheme: Boolean = true,
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
+    val colorScheme = DarkColorScheme
 
     MaterialTheme(
         colorScheme = colorScheme,
