@@ -9,9 +9,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.cuentaganado.domain.model.CounterState
 import com.example.cuentaganado.viewmodel.CounterViewModel
-import com.example.cuentaganado.ui.components.FinalizeDialog
-import com.example.cuentaganado.ui.components.GenderCounterCard
-import com.example.cuentaganado.ui.components.TotalSection
+import com.example.cuentaganado.ui.counter.components.FinalizeDialog
+import com.example.cuentaganado.ui.counter.components.GenderCounterCard
+import com.example.cuentaganado.ui.counter.components.TotalSection
 import com.example.cuentaganado.ui.theme.CuentaGanadoTheme
 
 @Composable
