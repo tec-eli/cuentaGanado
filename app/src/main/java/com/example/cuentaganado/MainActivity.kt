@@ -74,6 +74,52 @@ fun CounterScreen(
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
+private fun RowScope.GenderCounterCard(
+    label: String,
+    count: Int,
+    onIncrement: () -> Unit,
+    onDecrement: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .weight(1f)
+            .height(280.dp),
+        shape = RoundedCornerShape(28.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface,
+            contentColor = MaterialTheme.colorScheme.onSurface
+        ),
+        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(24.dp)
+                .combinedClickable(
+                    onClick = onIncrement,
+                    onLongClick = onDecrement,
+                    role = Role.Button
+                ),
+            verticalArrangement = Arrangement.SpaceBetween,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                text = label,
+                style = MaterialTheme.typography.titleMedium,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+            Text(
+                text = count.toString(),
+                style = MaterialTheme.typography.displayLarge.copy(fontSize = 72.sp),
+                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.primary
+            )
+        }
+    }
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
 private fun CounterScreenContent(
     modifier: Modifier = Modifier,
     state: CounterState,
@@ -111,14 +157,13 @@ private fun CounterScreenContent(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(20.dp)
         ) {
-            CounterCard(
+            GenderCounterCard(
                 label = "MACHO",
                 count = state.male,
                 onIncrement = onIncrementMale,
                 onDecrement = onDecrementMale
             )
-
-            CounterCard(
+            GenderCounterCard(
                 label = "HEMBRA",
                 count = state.female,
                 onIncrement = onIncrementFemale,
@@ -157,57 +202,6 @@ private fun TotalSection(
             ),
             color = MaterialTheme.colorScheme.onBackground
         )
-    }
-}
-
-@OptIn(ExperimentalFoundationApi::class)
-@Composable
-private fun RowScope.CounterCard(
-    label: String,
-    count: Int,
-    onIncrement: () -> Unit,
-    onDecrement: () -> Unit
-) {
-    Card(
-        modifier = Modifier
-            .weight(1f)
-            .height(280.dp),
-        shape = RoundedCornerShape(28.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface,
-            contentColor = MaterialTheme.colorScheme.onSurface
-        ),
-        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
-    ) {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(24.dp)
-                .combinedClickable(
-                    onClick = onIncrement,
-                    onLongClick = onDecrement,
-                    role = Role.Button
-                ),
-            verticalArrangement = Arrangement.SpaceBetween,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text(
-                text = "+ $label",
-                style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.onSurface
-            )
-            Text(
-                text = count.toString(),
-                style = MaterialTheme.typography.displayLarge.copy(fontSize = 72.sp),
-                textAlign = TextAlign.Center,
-                color = MaterialTheme.colorScheme.primary
-            )
-            Text(
-                text = "Mantener para −",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
-            )
-        }
     }
 }
 
