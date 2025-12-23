@@ -1,11 +1,14 @@
 package com.example.cuentaganado.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.example.cuentaganado.domain.model.CounterState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import com.example.cuentaganado.domain.model.CounterState
+import javax.inject.Inject
 
-class CounterViewModel : ViewModel() {
+@HiltViewModel
+class CounterViewModel @Inject constructor() : ViewModel() {
     private val _state = MutableStateFlow(CounterState())
     val state: StateFlow<CounterState> = _state
 
