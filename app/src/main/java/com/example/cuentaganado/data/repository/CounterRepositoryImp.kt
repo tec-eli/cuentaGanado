@@ -11,7 +11,7 @@ class CounterRepositoryImpl @Inject constructor(
     private val dao: CounterDao
 ) : CounterRepository {
 
-    override fun observe(): Flow<CounterState> =
+    override fun observeCounter(): Flow<CounterState> =
         dao.observe().map { entity ->
             entity?.toState() ?: CounterState()
         }
