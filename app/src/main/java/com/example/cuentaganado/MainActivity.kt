@@ -12,7 +12,9 @@ import com.example.cuentaganado.ui.theme.CuentaGanadoTheme
 import com.example.cuentaganado.viewmodel.CounterViewModel
 import androidx.compose.material3.*
 import androidx.compose.ui.Modifier
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private val viewModel: CounterViewModel by viewModels()
 
