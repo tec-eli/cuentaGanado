@@ -37,7 +37,9 @@ fun TotalSection(
     ) {
         Text(
             text = "TOTAL",
-            style = MaterialTheme.typography.labelLarge,
+            style = MaterialTheme.typography.labelLarge.copy(
+                fontSize = 30.sp
+            ),
             color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.8f)
         )
         Surface(
