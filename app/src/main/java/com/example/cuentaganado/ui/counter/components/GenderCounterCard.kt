@@ -35,8 +35,8 @@ fun RowScope.GenderCounterCard(
             .height(280.dp),
         shape = RoundedCornerShape(28.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface,
-            contentColor = MaterialTheme.colorScheme.onSurface
+            containerColor = MaterialTheme.colorScheme.secondary,
+            contentColor = MaterialTheme.colorScheme.onSecondary
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
     ) {
@@ -55,13 +55,13 @@ fun RowScope.GenderCounterCard(
             Text(
                 text = label,
                 style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.onSurface
+                color = MaterialTheme.colorScheme.onSecondary
             )
             Text(
                 text = count.toString(),
-                style = MaterialTheme.typography.displayLarge.copy(fontSize = 72.sp),
+                style = MaterialTheme.typography.displayLarge.copy(fontSize = 85.sp),
                 textAlign = TextAlign.Center,
-                color = MaterialTheme.colorScheme.primary
+                color = MaterialTheme.colorScheme.onSecondary
             )
         }
     }
