@@ -55,7 +55,7 @@ fun RowScope.GenderCounterCard(
             Text(
                 text = label,
                 style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.onSurface
+                color = MaterialTheme.colorScheme.onSecondary
             )
             Text(
                 text = count.toString(),
