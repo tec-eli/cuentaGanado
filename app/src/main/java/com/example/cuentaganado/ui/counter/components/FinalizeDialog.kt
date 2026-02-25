@@ -13,6 +13,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun FinalizeDialog(
@@ -23,12 +24,22 @@ fun FinalizeDialog(
         onDismissRequest = onDismiss,
         title = {
             CompositionLocalProvider(LocalContentColor provides MaterialTheme.colorScheme.tertiary) {
-                Text(text = "Finalizar conteo")
+                Column(modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp)) {
+                    Text(
+                        text = "Finalizar conteo",
+                        style = MaterialTheme.typography.labelMedium.copy(fontSize = 26.sp)
+                    )
+                }
             }
         },
         text = {
             CompositionLocalProvider(LocalContentColor provides MaterialTheme.colorScheme.tertiary) {
-                Text(text = "¿Confirmás finalizar el conteo actual?")
+                Column(modifier = Modifier.fillMaxWidth().padding(bottom = 12.dp)) {
+                    Text(
+                        text = "¿Confirmás finalizar el conteo actual?",
+                        style = MaterialTheme.typography.bodyLarge.copy(fontSize = 20.sp)
+                    )
+                }
             }
         },
         confirmButton = {
