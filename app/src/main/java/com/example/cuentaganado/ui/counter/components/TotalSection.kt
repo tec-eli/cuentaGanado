@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -37,6 +38,7 @@ fun TotalSection(
     ) {
         Text(
             text = "TOTAL",
+            modifier = Modifier.padding(top = 32.dp, bottom = 16.dp),
             style = MaterialTheme.typography.labelLarge.copy(
                 fontSize = 30.sp
             ),
