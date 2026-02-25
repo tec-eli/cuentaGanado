@@ -3,6 +3,7 @@ package com.example.cuentaganado.ui.counter.components
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -50,21 +51,28 @@ fun FinalizeDialog(
             ) {
                 Button(
                     onClick = onConfirm,
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp).height(56.dp),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = MaterialTheme.colorScheme.secondary
                     )
                 ) {
-                    Text(text = "Finalizar", color = MaterialTheme.colorScheme.onSecondary)
+                    Text(
+                        text = "Finalizar",
+                        color = MaterialTheme.colorScheme.onSecondary,
+                        fontSize = 20.sp
+                    )
                 }
                 Button(
                     onClick = onDismiss,
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp).height(56.dp),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = MaterialTheme.colorScheme.onSecondary
                     )
                 ) {
-                    Text(text = "Cancelar")
+                    Text(
+                        text = "Cancelar",
+                        fontSize = 20.sp
+                    )
                 }
             }
         },
